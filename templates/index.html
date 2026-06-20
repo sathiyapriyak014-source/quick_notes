@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Notes</title>
+</head>
+<body>
+
+    <h1>Quick Notes Application</h1>
+
+    <form action="/add" method="POST">
+        <textarea
+            name="note"
+            rows="5"
+            cols="40"
+            placeholder="Write your note here..."
+            required>
+        </textarea>
+
+        <br><br>
+
+        <button type="submit">
+            Save Note
+        </button>
+    </form>
+
+    <hr>
+
+    <h2>Saved Notes</h2>
+
+    <ul>
+        {% for note in notes %}
+            <li>{{ note[1] }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
